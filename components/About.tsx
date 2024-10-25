@@ -16,7 +16,7 @@ export default function About() {
               </h1>
               <h2 className="text-sm font-normal md:text-base">Learning AI</h2>
               <ul
-                className="max-sm:ml-5"
+                className="max-sm:ml-1"
                 style={{
                   listStyle: 'none',
                   marginTop: 10,
