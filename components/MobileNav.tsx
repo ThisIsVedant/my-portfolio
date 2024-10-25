@@ -98,16 +98,14 @@ export default function MobileNav({ activeSectionData }: any) {
               </Link>
             </div> */}
             {headerNavLinks.map(({ title, id }) => {
-              // const ref = document.querySelector(id);
-
               return (
                 <div key={title} className="px-12 py-4">
                   <button
                     key={id}
                     onClick={() => {
                       setNavShow(!navShow);
-
-                      // ref?.scrollIntoView({ behavior: 'smooth' });
+                      const ref = document?.querySelector(id);
+                      ref?.scrollIntoView({ behavior: 'smooth' });
                     }}
                     className={classNames(
                       'horizontal-underline font-bold tracking-widest text-gray-900 backdrop:text-2xl dark:text-gray-100',
