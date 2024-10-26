@@ -1,12 +1,10 @@
 import Link from 'next/link';
 import SectionContainer from '@/components/SectionContainer';
 
-// TODO: Comment out when https://github.com/vercel/next.js/issues/50566 is fixed.
-
-// export const metadata = {
-//   title: '404 - Vedant Sharma',
-//   description: 'Not Found - Vedant Sharma',
-// };
+export const metadata = {
+  title: '404 - Vedant Sharma',
+  description: 'Not Found - Vedant Sharma',
+};
 
 export default function FourZeroFour() {
   return (
@@ -25,7 +23,6 @@ export default function FourZeroFour() {
         </p>
         <Link href="/">Back to homepage</Link>
       </div>
-      //{' '}
     </SectionContainer>
   );
 }

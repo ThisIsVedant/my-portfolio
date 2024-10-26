@@ -92,7 +92,7 @@ export default function Hero(): ReactElement {
       {showAbout && (
         <motion.div
           className="relative z-10 h-[calc(100vh-81px)] md:h-[calc(100vh-116px)]"
-          initial={{ x: '100%' }} // Start from the right side
+          // initial={{ x: '100%' }} // Start from the right side
           animate={{ x: 0 }} // Animate to the center
           transition={{ duration: 0.5, ease: 'easeInOut' }}
         >

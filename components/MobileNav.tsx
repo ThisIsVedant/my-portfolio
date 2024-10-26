@@ -85,18 +85,6 @@ export default function MobileNav({ activeSectionData }: any) {
             </button>
           </header>
           <nav className="fixed mt-8 h-full">
-            {/* <div key="Home" className="px-12 py-4">
-              <Link
-                href="/"
-                onClick={() => setNavShow(!navShow)}
-                className={classNames(
-                  'horizontal-underline font-bold tracking-widest text-gray-900 backdrop:text-2xl dark:text-gray-100',
-                  { 'horizontal-underline-active': pathName === '/' }
-                )}
-              >
-                Home
-              </Link>
-            </div> */}
             {headerNavLinks.map(({ title, id }) => {
               return (
                 <div key={title} className="px-12 py-4">

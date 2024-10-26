@@ -13,7 +13,7 @@ export const workTiles: WorkTile[] = [
     description: `Here are things`,
     title: `I've worked on`,
     image: {
-      src: '/static/images/Untitled.webp',
+      src: '/static/images/projects.webp',
       width: 600,
       height: 770,
     },
@@ -22,27 +22,18 @@ export const workTiles: WorkTile[] = [
     description: `I've worked on`,
     title: 'Management system',
     image: {
-      src: '/static/images/Untitled5.webp',
+      src: '/static/images/hotel-management.webp',
       width: 600,
       height: 554,
     },
   },
   {
     description: `I've worked on`,
-    title: 'Room reservation platform',
+    title: 'Reservation system',
     image: {
-      src: '/static/images/Untitled27.webp',
+      src: '/static/images/room-reservation.webp',
       width: 600,
       height: 717,
     },
   },
-  // {
-  //   description: `I built`,
-  //   title: 'Aphex Publication',
-  //   image: {
-  //     src: '/static/images/publication-app.webp',
-  //     width: 600,
-  //     height: 717,
-  //   },
-  // },
 ];

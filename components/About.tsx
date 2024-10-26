@@ -102,10 +102,6 @@ export default function About() {
               for full-stack development.
             </p>
             <p>💻 I build scalable web applications with modern frameworks.</p>
-            {/* <p>
-              🚀 Combining AI expertise with full-stack skills to create
-              innovative solutions.
-            </p> */}
           </div>
         </div>
       </MainLayout>
