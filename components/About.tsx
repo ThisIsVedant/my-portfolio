@@ -187,7 +187,7 @@ export default function About() {
               />
             </div>
           </div>
-          <div className="prose max-w-none pb-8 text-center sm:text-justify text-sm dark:prose-dark md:text-lg xl:col-span-2">
+          <div className="prose max-w-none pb-8 text-start sm:text-justify text-sm dark:prose-dark md:text-lg xl:col-span-2 ">
             <p>🌱 I’m currently learning AI</p>
             <p>💬 Ask me about AI, Python, and Github</p>
             <p>📫 How to reach me: thisisvedant.2005@gmail.com</p>
