@@ -7,6 +7,7 @@ import MobileNav from './MobileNav';
 import { SectionContainer1 } from './SectionContainer';
 import ThemeSwitch from './ThemeSwitch';
 import headerNavLinks from '@/content/headerNavLinks';
+import {logCustomEvent} from '@/app/firebase'
 
 export default function Header() {
   const pathName = usePathname();
@@ -37,6 +38,8 @@ export default function Header() {
                     <button
                       key={title}
                       onClick={() => {
+                       
+                        logCustomEvent(title);
                         const ref = document?.querySelector(id);
 
                         ref?.scrollIntoView({ behavior: 'smooth' });
@@ -64,3 +67,5 @@ export default function Header() {
     </SectionContainer1>
   );
 }
+
+

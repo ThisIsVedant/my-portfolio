@@ -16,6 +16,8 @@ interface RootLayoutProps {
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
+
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -47,7 +49,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           enableSystem={false}
           themes={['dark', 'light']}
         >
-          <Header />
+         <Header />
           <LenisProvider>
             <main>{children}</main>
           </LenisProvider>
