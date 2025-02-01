@@ -32,7 +32,7 @@ export default function Hero(): ReactElement {
   return (
     <div id="home">
       <h1 className="sr-only">
-        Hello I'm Vedant Sharma, I'm a full stack developer, and I love building
+        Hello I'm Vedant Sharma, I'm a frontend developer, and I love building
         things for the web.
       </h1>
 

@@ -10,15 +10,15 @@ gsap.registerPlugin(ScrollTrigger);
 const skillsData = [
   {
     title: 'Python',
-    description: 'Powerful language for AI and backend.',
+    description: 'Powerful language for AI',
+  },
+  {
+    title: 'NextJS',
+    description: 'Fullstack framework for React',
   },
   {
     title: 'ReactJS',
     description: 'Frontend library for dynamic UIs.',
-  },
-  {
-    title: 'NextJS',
-    description: 'Fullstack framework for React apps.',
   },
   {
     title: 'Pandas',
@@ -29,7 +29,7 @@ const skillsData = [
     description: 'Numerical computing library.',
   },
   {
-    title: 'Git & GitHub',
+    title: 'Git',
     description: 'Version control tools.',
   },
 ];
