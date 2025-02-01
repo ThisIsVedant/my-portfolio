@@ -13,12 +13,20 @@ export const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-const analytics = isSupported().then((isSupported) => (isSupported ? getAnalytics(app) : null));
-setAnalyticsCollectionEnabled(getAnalytics(), true);
+let analytics = null;
 
-export const logCustomEvent = async (event) => {  
-    if (!analytics) return;
-    console.log("Welcome2", event);
+// Ensure Firebase Analytics is only initialized on the client side
+if (typeof window !== "undefined") {
+  isSupported().then((supported) => {
+    if (supported) {
+      analytics = getAnalytics(app);
+      setAnalyticsCollectionEnabled(analytics, true);
+    }
+  });
+}
 
-    logEvent(getAnalytics(), event, { platform: "web" });
+export const logCustomEvent = async (event) => {
+  if (typeof window === "undefined" || !analytics) return; // Ensure it's client-side and analytics is initialized
+  console.log("Logging event:", event);
+  logEvent(analytics, event, { platform: "web" });
 };

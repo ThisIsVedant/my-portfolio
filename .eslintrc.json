@@ -22,7 +22,8 @@
   },
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
-    "prettier/prettier": "error" // Show Prettier errors as ESLint errors
+    "prettier/prettier": "error", // Show Prettier errors as ESLint errors
+    "no-explicit-any": "warn"
   },
   "settings": {
     "react": {
