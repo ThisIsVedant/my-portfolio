@@ -15,7 +15,7 @@ export default function About() {
                 Vedant Sharma
               </h1>
               <h2 className="text-base font-normal sm:text-lg md:text-xl">
-                Learning AI
+                AI Enthusiast | Frontend Developer
               </h2>
               <ul
                 className="flex justify-center sm:justify-start mt-4"
@@ -78,10 +78,16 @@ export default function About() {
           </div>
           <div className="prose max-w-none pb-8 text-start sm:text-justify text-sm dark:prose-dark md:text-lg xl:col-span-2 ">
             <p>🌱 I’m currently learning AI</p>
-            <p>💬 Ask me about AI, Python, and Github</p>
             <p>📫 How to reach me: thisisvedant.2005@gmail.com</p>
             <p>
-              🌐 I’m skilled in{' '}
+              🌐 Frontend development with{' '}
+              <a
+                className="underline-magical"
+                style={{ textDecoration: 'none' }}
+                href="https://flutter.dev/"
+              >
+                Flutter,
+              </a>{' '}
               <a
                 className="underline-magical"
                 style={{ textDecoration: 'none' }}
@@ -97,9 +103,8 @@ export default function About() {
               >
                 Next.js
               </a>{' '}
-              for frontend development.
             </p>
-            <p>💻 I build scalable web applications with modern frameworks.</p>
+            <p>💻 I Build scalable and innovative applications for web, mobile, and desktop using modern frameworks.</p>
           </div>
         </div>
       </MainLayout>
