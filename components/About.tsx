@@ -26,7 +26,7 @@ export default function About() {
               >
                 <li className="mr-4">
                   <a
-                    href="https://www.linkedin.com/in/vedant-sharma-4091aa243/"
+                    href="https://www.linkedin.com/in/vedantsharma01/"
                     target="_blank"
                     rel="noreferrer"
                     aria-label="linkedin"
