@@ -9,10 +9,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const skillsData = [
   {
-    title: 'Flutter',
-    description: 'Cross-platform development.',
-  },
-  {
     title: 'NextJS',
     description: 'Fullstack framework for React.',
   },
