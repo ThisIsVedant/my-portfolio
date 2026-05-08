@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import LenisProvider from '@/components/Providers/LenisProvider';
 import ThemeProvider from '@/components/Providers/ThemeProvider';
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata = {
   title: 'Vedant Sharma',
@@ -55,6 +56,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           </LenisProvider>
           <Footer />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
