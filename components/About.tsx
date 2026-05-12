@@ -97,7 +97,7 @@ export default function About() {
                 Next.js
               </a>{' '}
             </p>
-            <p>💻 I Build scalable and innovative applications for web, mobile, and desktop using modern frameworks.</p>
+            <p>💻 I Build scalable and innovative applications for web using modern frameworks.</p>
           </div>
         </div>
       </MainLayout>
