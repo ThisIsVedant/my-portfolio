@@ -84,13 +84,6 @@ export default function About() {
               <a
                 className="underline-magical"
                 style={{ textDecoration: 'none' }}
-                href="https://flutter.dev/"
-              >
-                Flutter,
-              </a>{' '}
-              <a
-                className="underline-magical"
-                style={{ textDecoration: 'none' }}
                 href="https://reactjs.org/"
               >
                 React.js
