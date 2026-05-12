@@ -1,20 +1,9 @@
 const headerNavLinks = [
-  {
-    title: 'Home',
-    id: '#home',
-  },
-  {
-    title: 'Intro',
-    id: '#intro',
-  },
-  {
-    title: 'Works',
-    id: '#works',
-  },
-  {
-    title: 'Skills',
-    id: '#contact',
-  },
+  { title: 'Home', id: '#home' },
+  { title: 'Works', id: '#works' },
+  { title: 'Skills', id: '#skills' },
+  { title: 'Services', id: '#services' },
+  { title: 'Contact', id: '#contact' },
 ];
 
 export default headerNavLinks;

@@ -12,7 +12,7 @@ const siteMetadata = {
   socialBanner: '/static/images/twitter-card.png',
   email: 'thisisvedant.2005@gmail.com',
   github: 'https://github.com/ThisIsVedant',
-  linkedin: 'https://www.linkedin.com/in/vedant-sharma-4091aa243/',
+  linkedin: 'https://www.linkedin.com/in/vedantsharma01/',
   locale: 'en-US',
   comment: {
     provider: 'giscus',

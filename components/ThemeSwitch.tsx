@@ -1,45 +1,30 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
-import { BsMoonFill, BsSunFill } from 'react-icons/bs';
+import { ThemeToggle, type Theme } from '@/components/ui/curtain-theme-toggle';
 
-const ThemeSwitch = () => {
+export default function ThemeSwitch() {
+  const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme, resolvedTheme } = useTheme();
 
-  // When mounted on client, now we can show the UI
   useEffect(() => setMounted(true), []);
 
-  return (
-    <motion.button
-      id="theme-btn"
-      aria-label="Toggle Dark Mode"
-      type="button"
-      className="ml-1 mr-1 h-8 w-8 rounded p-1 mt-1"
-      whileTap={{
-        scale: 0.7,
-        rotate: 360,
-        transition: { duration: 0.2 },
-      }}
-      whileHover={{ scale: 1.2 }}
-      onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 20 20"
-        fill="currentColor"
-        className="text-custom-moon dark:text-yellow-300"
-      >
-        {mounted && (theme === 'dark' || resolvedTheme === 'dark') ? (
-          <BsSunFill size={16} />
-        ) : (
-          <BsMoonFill size={18} />
-        )}
-      </svg>
-    </motion.button>
-  );
-};
+  if (!mounted) {
+    // Placeholder same size as button to avoid layout shift
+    return <div style={{ width: 36, height: 36 }} />;
+  }
 
-export default ThemeSwitch;
+  const handleChange = (t: Theme) => {
+    setTheme(t);
+  };
+
+  return (
+    <ThemeToggle
+      variant="icon"
+      defaultTheme={(resolvedTheme as Theme) ?? 'dark'}
+      duration={550}
+      onThemeChange={handleChange}
+    />
+  );
+}

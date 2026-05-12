@@ -1,132 +1,76 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const skillsData = [
-  {
-    title: 'NextJS',
-    description: 'Fullstack framework for React.',
-  },
-  {
-    title: 'ReactJS',
-    description: 'Frontend library for dynamic UIs.',
-  },
-  {
-    title: 'Python',
-    description: 'Powerful language for AI',
-  },
-  {
-    title: 'Pandas',
-    description: 'Data manipulation library.',
-  },
-  {
-    title: 'NumPy',
-    description: 'Numerical computing library.',
-  },
-  {
-    title: 'Supabase',
-    description: 'Backend made simple.',
-  },
-  {
-    title: 'Git',
-    description: 'Version control tools.',
-  },
+  { title: 'Next.js', description: 'Fullstack React framework.' },
+  { title: 'React', description: 'Frontend library for dynamic UIs.' },
+  { title: 'Python', description: 'Powerful language for AI & data.' },
+  { title: 'TypeScript', description: 'Type-safe JavaScript at scale.' },
+  { title: 'Pandas', description: 'Data manipulation & analysis.' },
+  { title: 'NumPy', description: 'Numerical computing library.' },
+  { title: 'Supabase', description: 'Open-source backend platform.' },
+  { title: 'Git', description: 'Version control & collaboration.' },
 ];
 
-interface SkillItemProps {
-  title: string;
-  description: string;
-}
+const containerVariants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.08 } },
+};
 
-const SkillCard = ({ title, description }: SkillItemProps) => (
-  <motion.div whileHover={{ scale: 1.1 }}>
-    <div className="skill-card bg-gray-100 rounded-xl p-6 md:p-8 ">
-      <motion.h3
-        className="text-2xl md:text-3xl font-bold"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-      >
-        {title}
-      </motion.h3>
-      <motion.p
-        className="mt-3 text-md md:text-lg"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.3 }}
-      >
-        {description}
-      </motion.p>
-    </div>
-  </motion.div>
-);
+const cardVariants = {
+  hidden: { opacity: 0, scale: 0.9, y: 20 },
+  show: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
+};
 
-const Skills = () => {
-  const containerRef = useRef(null);
-
-  useEffect(() => {
-    // Scroll-based animations using GSAP
-    gsap.fromTo(
-      '.skill-section',
-      { opacity: 0, y: 50 },
-      {
-        opacity: 1,
-        y: 0,
-        scrollTrigger: {
-          trigger: '.skill-section',
-          start: 'top 80%',
-          end: 'bottom 60%',
-          scrub: true,
-        },
-      },
-    );
-  }, []);
-
-  useEffect(() => {
-    gsap.to('.parallax-item', {
-      y: (i, target) => -target.offsetHeight * 0.2,
-      scrollTrigger: {
-        trigger: '.parallax-item',
-        scrub: true,
-      },
-    });
-  }, []);
-
+export default function Skills() {
   return (
-    <div id="contact" ref={containerRef} className="bg-white text-gray-900">
-      {/* Hero Section */}
-      <section className="hero bg-gradient-to-b from-white to-gray-200 h-60 flex flex-col justify-center items-center ">
-        <motion.h1
-          className="text-4xl sm:text-5xl md:text-6xl font-extrabold"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+    <section id="skills" className="py-24 sm:py-32 bg-gray-50 dark:bg-neutral-950">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-14 text-center"
         >
-          Skills
-        </motion.h1>
-        <motion.p
-          className="text-lg sm:text-xl md:text-2xl mt-5"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
-        >
-          Tools that power my development.
-        </motion.p>
-      </section>
+          <span className="text-sm font-semibold uppercase tracking-widest text-primary-500 dark:text-primary-400">
+            Toolkit
+          </span>
+          <h2 className="mt-3 text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">
+            Skills
+          </h2>
+          <p className="mt-4 text-lg text-gray-500 dark:text-gray-400 max-w-xl mx-auto">
+            Tools that power my development — chosen for depth, not breadth.
+          </p>
+        </motion.div>
 
-      {/* Skill Sections */}
-      <section className="skill-section py-10 md:py-20">
-        <motion.div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-10">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-60px' }}
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"
+        >
           {skillsData.map(({ title, description }) => (
-            <SkillCard key={title} title={title} description={description} />
+            <motion.div
+              key={title}
+              variants={cardVariants}
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+              className="group relative rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.03] p-6 cursor-default overflow-hidden hover:border-primary-300 dark:hover:border-primary-500/40 transition-colors duration-200"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-50/0 dark:from-primary-500/0 to-primary-50/0 dark:to-primary-500/0 group-hover:from-primary-50 dark:group-hover:from-primary-500/5 group-hover:to-teal-50 dark:group-hover:to-primary-900/10 transition-all duration-300 rounded-2xl" />
+              <div className="relative z-10">
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white">{title}</h3>
+                <p className="mt-1.5 text-xs leading-relaxed text-gray-500 dark:text-gray-500 group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">
+                  {description}
+                </p>
+              </div>
+            </motion.div>
           ))}
         </motion.div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
-};
-export default Skills;
+}
