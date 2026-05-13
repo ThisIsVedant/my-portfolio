@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ArrowUpRight, Mail } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import siteMetadata from '@/content/siteMetadata';
+import { DottedSurface } from './ui/dotted-surface';
 
 const socials = [
   { label: 'GitHub',   href: siteMetadata.github,                 Icon: FaGithub },
@@ -27,8 +28,9 @@ export default function Footer() {
   return (
     <footer id="contact" className="bg-white dark:bg-black border-t border-gray-100 dark:border-white/10">
       {/* CTA strip */}
-      <div className="border-b border-gray-100 dark:border-white/5 py-20 sm:py-28">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 text-center">
+      <div className="relative border-b border-gray-100 dark:border-white/5 py-20 sm:py-28 overflow-hidden">
+        <DottedSurface />
+        <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -78,6 +80,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
+
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-8">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
